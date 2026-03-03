@@ -2,6 +2,7 @@ import parser as p
 import time 
 import json
 
+# Не надо материться!
 
 
 if __name__ == "__main__":
