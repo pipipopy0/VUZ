@@ -6,8 +6,6 @@ from bs4 import BeautifulSoup
 user = fake_useragent.UserAgent().random
 header = {"user-agent" : user}
 
-#хм, это дого. так перебирать каждый сайт. лучше наверное сделать автоматическое заполнение
-
 #Ссылки пиздит с мэи
 def parse_links_mpei():
     try:
@@ -41,39 +39,42 @@ def parse_links_mpei():
     except Exception as e:
         print(f"Ошибка {e}")
 
-def mpei_parser(link, id):
+async def mpei_parser(session, d_link, id, d_name):
     try:
-        response = requests.get(link, headers=header).text
-        soup = BeautifulSoup(response, "lxml")
-        p_position = 0
-        p_id = None
-        p_sum_results = None
-        all_rowz = soup.find_all("tr")
-        try:
-            for row in all_rowz:
-                get_id = row.get("id")#get_id - это блок, в котором уже есть нужные нам данные. в том числе и уникальный номер
-                if get_id and get_id[0] == "p":     
-                    #Тут по идексам нужно находить
-                    p_id = row.find_all("td")[0].text#id персонажа
-                    p_sum_results = row.find_all("td")[1].text#id сумма вступит
-                    p_position += 1
-                    if str(p_id) == id:
-                        break
+        async with session.get(d_link) as response:
+            html = await response.text()
+            soup = BeautifulSoup(html, "lxml")
+            p_position = 0
+            p_id = None
+            p_sum_results = None
+            all_rowz = soup.find_all("tr")
+            try:
+                for row in all_rowz:
+                    get_id = row.get("id")#get_id - это блок, в котором уже есть нужные нам данные. в том числе и уникальный номер
+                    if get_id and get_id[0] == "p":     
+                        #Тут по идексам нужно находить
+                        p_id = row.find_all("td")[0].text#id персонажа
+                        p_sum_results = row.find_all("td")[1].text#id сумма вступит
+                        p_position += 1
+                        if str(p_id) == id:
+                            break
 
-            return {"p_position" : p_position,
-                    "p_id" : p_id, 
-                    "p_sum_results" : p_sum_results}
-        except Exception as e:
-            print(e)
-            return {"p_position": None, "p_id": None, "p_sum_results": None}
+                return {"p_position" : p_position,
+                        "p_id" : p_id, 
+                        "p_sum_results" : p_sum_results,
+                        "d_name" : d_name, 
+                        "d_link" : d_link}
+            except Exception as e:
+                print(e)
+                return {"p_position": None,
+                        "p_id": None,
+                        "p_sum_results": None,
+                        "d_name" : None,
+                        "d_link" : None}
     except Exception as e:
         print(e)
-        return {"p_position": None, "p_id": None, "p_sum_results": None}
-
-
-
-    #p_position = mpei_parser(link=mpei_dict["MM IVTI budget (Full-time)"], id=needed_id).get("p_position")
-    #p_sum_results = mpei_parser(link=mpei_dict["MM IVTI budget (Full-time)"], id=needed_id).get("p_sum_results")
-    #p_id = mpei_parser(link=mpei_dict["MM IVTI budget (Full-time)"], id=needed_id).get("p_id")
-
-    #print(f"Абитуриент {p_id} на месте {p_position} с баллами {p_sum_results}")
+        return {"p_position": None,
+                    "p_id": None,
+                    "p_sum_results": None,
+                    "d_name" : None,
+                    "d_link" : None}
