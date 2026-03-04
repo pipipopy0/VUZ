@@ -25,7 +25,7 @@ async def check_id_directions(id):
                                 p_position = person_dict.get("p_position")
                                 p_sum_results = person_dict.get("p_sum_results")
                                 d_name = person_dict.get("d_name")
-                                d_link = person_dict.get("d_name")
+                                d_link = person_dict.get("d_link")
                                 print(f"Абитуриент {p_id} на месте {p_position} с баллами {p_sum_results} на направлении {d_name}",f" {d_link} ")
                     end = time.perf_counter()
                     print(f"Выполнение кода потребовало: {end-start:.2f} сек")

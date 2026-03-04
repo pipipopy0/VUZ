@@ -14,7 +14,7 @@ def parse_links_mpei():
         soup = BeautifulSoup(response, 'lxml')#Он в качесвте аргумента принимает теги html и можно находить с помощью него нужные значение на страницею.
         all_rows = soup.find_all("tr")
         
-        data = []
+        data = []#список словарей
 
         for row in all_rows:
             if row.find("a", class_="competitive-group") and not row.has_attr("style"):

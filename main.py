@@ -1,7 +1,6 @@
 import logics as l
-import parser as p
-import time, asyncio
-import json
+import  asyncio
+
 
 # Не надо материться!
 
