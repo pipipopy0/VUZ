@@ -51,56 +51,44 @@ if html_content:
 
     rows = table.find_all('tr') # Разделяем большую таблицу на строки
 
+    data = {} # Пустой словарь, который заполниться и пойдет в json
+
+    filial = "НИУ «МЭИ» г. Москва" # Сначала по умолчанию идет основной вуз который в москве
+    data[filial] = {}
+
     for row in rows[1:]: # отдельно обрабатываем каждую строку Кроме первой - там подписи, нам не нужны
         cells = row.find_all('td') # Находим ВСЕ ячейки внутри этой конкретной строки
 
         if len(cells) == 1: # один столбец = название филиала
             filial = cells[0].get_text() # Вытягиваем название конкретного филиала
-            print("\n\n" + "Филиал: " + filial + "\n")
-
+            data[filial] = {}
+            
 
         elif len(cells) == 2: # два столбца = направление + ссылки
             # Здесь в первой ячейке лежит направление, а во второй для какой именно группы + ссылки
+
             naprav = cells[0].get_text() # Из первой ячейки вытаскиваем название направления
+            groups = cells[1].find_all('a') # Из второй ячейки вытаскиваем массив ссылок с названиями групп
 
-            spisok = cells[1].get_text()
-            print(naprav + ": " + spisok + "\n")
+            data[filial][naprav] = {}
 
+            one_naprav = {} # Массив для того, чтобы заполнять группы внутри направлений
+            for group in groups:
+                group_name = group.get_text(strip=True) # получаем имя группы, будет ключем
+                group_link = "https://pk.mpei.ru/inform/" + group.get('href') # Собираем ссылку на группу
+
+                data[filial][naprav][group_name] = group_link
+                
 
         else:
             print(cells) # Что-то странное, надо посмотреть что именно
 
+    # Здесь формирование списка завершено и надо теперь аккуратненько переписать его в файл
 
-
-# if html_content:
-#     print(f"✅ Успех! Получено {html_content} символов.")
-#     # Тут можно сразу передавать html_content в BeautifulSoup
-# else:
-#     print("⛔ Данные не получены, парсить нечего.")
-
-
+    # Открываем файл с кодировкой utf-8 (для русских букв)
+    with open("Stepchik_learn_asynk/links.json", "w", encoding="utf-8") as f:
+        # dump(что_пишем, куда_пишем, сохраняем_кириллицу, делаем_отступы)
+        json.dump(data, f, ensure_ascii=False, indent=4)
 
 
 
-
-
-# # 2. Создаем данные (словарь Python)
-# # Это то, что мы хотим сохранить
-# data = {
-#     "name": "Иванов И.И.",
-#     "score": 250,
-#     "agreed": True
-# }
-
-# # 3. Открываем файл для ЗАПИСИ
-# # "w" = write (создать/перезаписать)
-# # encoding="utf-8" = чтобы кириллица не превратилась в \u0418...
-# with open("Stepchik_learn_asynk/test.json", "w", encoding="utf-8") as f:
-    
-#     # 4. Превращаем словарь в JSON и пишем в файл
-#     # ensure_ascii=False = оставить русские буквы как есть
-#     # indent=2 = красивые отступы (иначе всё в одну строку)
-#     json.dump(data, f, ensure_ascii=False, indent=2)
-
-# # 5. Файл автоматически закроется после выхода из with
-# print("Готово. Проверь файл test.json в папке со скриптом.")
