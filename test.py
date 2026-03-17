@@ -1,37 +1,45 @@
-import asyncio
-import aiohttp
+import requests
+import json
+import fake_useragent
+from bs4 import BeautifulSoup
 
-# Функция скачивает страницу по URL
-async def fetch(session, url):
-    print("Скачиваю:", url)
-    response = await session.get(url)   # отправляем запрос
-    html = await response.text()        # получаем текст страницы
-    return html
+user = fake_useragent.UserAgent().random
+header = {"user-agent" : user}
+#tr, td, a, competitive_group, style
+"""mpei_config = {
+    "link" : "https://pk.mpei.ru/inform/entrants_list.html",
+    "all_rows_tag" : "tr",
+    "row_" :  "",
+}"""
 
-# Основная функция
-async def main():
-    urls = [
-        "https://example.com",
-        "https://python.org",
-        "https://github.com"
-    ]
+def parse_links_mpei():
+    try:
+        link = "https://pk.mpei.ru/inform/entrants_list.html"
+        response = requests.get(link, headers=header, timeout=20).text#вот тут мы добавили словарь с заголовком, для того, чтобы имзенить вид user-agent`а
+        soup = BeautifulSoup(response, 'lxml')#Он в качесвте аргумента принимает теги html и можно находить с помощью него нужные значение на страницею.
+        all_rows = soup.find_all("tr")
+        
+        data = []#список словарей
 
-    async with aiohttp.ClientSession() as session:
-        tasks = []  # сюда будем складывать задачи
+        for row in all_rows:
+            if row.find("a", class_="competitive-group") and not row.has_attr("style"):
+                name = row.find_all("td")[0].text
 
-        # создаём задачи ОДНА ЗА ДРУГОЙ, без сокращений
-        for url in urls:
-            task = fetch(session, url)  # создаём задачу
-            tasks.append(task)          # кладём в список
+                all_links = row.find_all("a", class_="competitive-group")
 
-        # запускаем все задачи одновременно
-        results = await asyncio.gather(*tasks)
+                for links in all_links:
+                    second_name = links.text.strip()
+                    link = links.get("href")
+                    full_name = name + " " + second_name
+                    full_link = "https://pk.mpei.ru/inform/" + str(link)
+                    data.append({
+                        full_name : full_link
+                        })
 
-        # выводим результат
-        for i in range(len(urls)):
-            print("URL:", urls[i])
-            print("Длина HTML:", len(results[i]))
-            print()
+        with open("links.json", "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+                
 
-# запускаем программу
-asyncio.run(main())
+
+    except Exception as e:
+        print(f"Ошибка {e}")

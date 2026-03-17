@@ -7,6 +7,10 @@ user = fake_useragent.UserAgent().random
 header = {"user-agent" : user}
 
 #Ссылки пиздит с мэи
+""" Цель: создает файл со всеми названиями и ссылками
+    
+
+"""
 def parse_links_mpei():
     try:
         link = "https://pk.mpei.ru/inform/entrants_list.html"
@@ -54,7 +58,8 @@ async def mpei_parser(session, d_link, id, d_name):
                     if get_id and get_id[0] == "p":     
                         #Тут по идексам нужно находить
                         p_id = row.find_all("td")[0].text#id персонажа
-                        p_sum_results = row.find_all("td")[1].text#id сумма вступит
+                        p_sum_results = row.find_all("td")[1].text# сумма вступит
+                        p_priority = row.find_all("td")[10].text#приоритет среди направлений
                         p_position += 1
                         if str(p_id) == id:
                             break
@@ -63,18 +68,21 @@ async def mpei_parser(session, d_link, id, d_name):
                         "p_id" : p_id, 
                         "p_sum_results" : p_sum_results,
                         "d_name" : d_name, 
-                        "d_link" : d_link}
+                        "d_link" : d_link,
+                        "p_priority" : p_priority}
             except Exception as e:
                 print(e)
                 return {"p_position": None,
                         "p_id": None,
                         "p_sum_results": None,
                         "d_name" : None,
-                        "d_link" : None}
+                        "d_link" : None,
+                        "p_priority" : None}
     except Exception as e:
         print(e)
         return {"p_position": None,
                     "p_id": None,
                     "p_sum_results": None,
                     "d_name" : None,
-                    "d_link" : None}
+                    "d_link" : None,
+                        "p_priority" : None}
