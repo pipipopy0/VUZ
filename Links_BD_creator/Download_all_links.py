@@ -12,7 +12,6 @@ SEMAPHORE_LIMIT = 20  # максимум параллельных запросо
 
 
 
-
 ##############################################################################################
 ##########                          Работа с сетью                                  ##########
 ##############################################################################################
@@ -150,38 +149,39 @@ def _print_nested(data, indent=0):
 
 
 def db_worker(queue_data):
-    """ TODO Заглушка: просто показывает, что приходит от парсера"""
-    warnings.warn("⚠️  Download_all_links.py [DB] ЗАГЛУШКА — данные не сохраняются!", UserWarning, stacklevel=2)
-
-    # ЕСЛИ НАДО ТО ЗДЕСЬ МОЖНО СОЗДАТЬ КЛАСС ДЛЯ УПРАВЛЕНИЯ БД
+    """Сохранение данных в базу данных"""
     
+    import sys
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from db import Database
+    
+    new_dp = Database(dp_path='abiturient.db')
+    tables = {
+        "universities": """id INTEGER PRIMARY KEY AUTOINCREMENT, name_university TEXT UNIQUE""",
+        "forms": """id INTEGER PRIMARY KEY AUTOINCREMENT, university_id INTEGER, name_form TEXT, UNIQUE (university_id, name_form), FOREIGN KEY (university_id) REFERENCES universities(id)""",
+        "branches": """id INTEGER PRIMARY KEY AUTOINCREMENT, forms_id INTEGER, name_branch TEXT, UNIQUE (forms_id, name_branch), FOREIGN KEY (forms_id) REFERENCES forms(id)""",
+        "directions": """id INTEGER PRIMARY KEY AUTOINCREMENT, branch_id INTEGER, name_direction TEXT, UNIQUE (branch_id, name_direction), FOREIGN KEY (branch_id) REFERENCES branches(id)""",
+        "specializations": """id INTEGER PRIMARY KEY AUTOINCREMENT, direction_id INTEGER, name_specialization TEXT, link_specialization TEXT, UNIQUE (direction_id, name_specialization, link_specialization), FOREIGN KEY (direction_id) REFERENCES directions(id)"""
+    }
+    new_dp.create_tables(tables=tables)
 
     while True:
         data = queue_data.get()
         
-
-        if data is None:  # Сигнал конца
+        if data is None:
             break
         
-
         try:
-            # Передаём пачку данных в класс
-            # ЗДЕСЬ ЗАПИСЫВАЕМ ИНФОРМАЦИЮ ИЗ data В БД
-            
-            _print_nested(data)  # ← Красивый вывод дерева
+            new_dp.insert_recursive(data=data)
+            print(f"💾 Данные сохранены в БД")
+            #_print_nested(data)  # ← для отладки
             
         except Exception as e:
             print(f"❌ Ошибка БД: {e}")
-        
-
-
-        # Просто выводим то, что пришло
-        print(f"💾 [DB] Получено {len(data)} записей:")
-
-        for item in data:  
-            print(f"   {item}")
-        
+            import traceback
+            traceback.print_exc()
     
+    new_dp.close_dp()
     print("✅ DB worker завершён")
 
 
