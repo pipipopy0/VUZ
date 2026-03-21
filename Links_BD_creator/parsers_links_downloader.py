@@ -100,11 +100,16 @@ def parse_mpei_links(html: str, link_data: dict) -> dict:
                         #     'url': full_url
                         # })
 
+                        # 1. Извлекаем ID из ссылки (например, "2218" из "...list2218.html")
+                        link_id = full_url.rstrip('.html').split('_')[-1] if '_' in full_url else '0'
+
+                        # 2. Добавляем ID к названию типа списка
+                        unique_key = f"{list_type} #{link_id}"
 
                        # 🌲 Строим дерево
                         results.setdefault(university, {}) \
                                .setdefault(form, {}) \
                                .setdefault(filial, {}) \
-                               .setdefault(direction, {})[list_type] = full_url
+                               .setdefault(direction, {})[unique_key] = full_url
     
     return results
