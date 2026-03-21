@@ -2,17 +2,18 @@
 """
 Формат возвращаемых Значений:
 
-[
-    {
-        'university': 'НИУ МЭИ',        # Из link_data['name']
-        'form': 'Очная',                # Из HTML или link_data
-        'filial': 'Москва',             # Из HTML (заголовок)
-        'direction': '09.03.02 Информатика',  # Из HTML (таблица)
-        'list_type': 'Без ВИ',          # Из HTML (тип списка)
-        'url': 'https://pk.mpei.ru/...' # Из HTML (полная ссылка)
-    },
-    ...
-]
+{
+    "НИУ МЭИ": {
+        "Бакалавриат очная форма обучения": {
+            "НИУ «МЭИ» г. Москва": {
+                "Направление...": {
+                    "Без ВИ": "https://...",
+                    "Целевики": "https://..."
+                }
+            }
+        }
+    }
+}
 
 """
 
@@ -20,7 +21,7 @@
 from bs4 import BeautifulSoup
 
 
-def parse_mpei_links(html: str, link_data: str) -> list:
+def parse_mpei_links(html: str, link_data: dict) -> dict:
     """Парсит каталог МЭИ, возвращает список ссылок"""
     print(f"🏫 Вуз: НИУ МЭИ")
     print(f"🔗 URL: {link_data}")
@@ -41,13 +42,20 @@ def parse_mpei_links(html: str, link_data: str) -> list:
     # 4. Проверка на рассинхрон
     if len(forms_list) != len(tables):
         print(f"❌ Рассинхрон: форм {len(forms_list)}, таблиц {len(tables)}")
-        return []
+        return {}
 
-    results = []  # ← Сюда будем собирать найденные ссылки
+    
+    # results = []
+
+    # Итоговое дерево
+    results = {}
+
 
     # 5. Проходим по парам (Форма → Таблица)
     for form, table in zip(forms_list, tables): # zip составляет как раз-таки эти пары
         print(f"  📚 Форма: {form}")
+        
+        university = link_data['name']
         
         # По умолчанию филиал — главный вуз
         filial = "НИУ «МЭИ» г. Москва"
@@ -80,14 +88,22 @@ def parse_mpei_links(html: str, link_data: str) -> list:
                         else:
                             full_url = "https://pk.mpei.ru/inform/" + href.lstrip('/')
                         
-                        # Формируем итоговый словарь
-                        results.append({
-                            'university': link_data['name'],
-                            'form': form,
-                            'filial': filial,
-                            'direction': direction,
-                            'list_type': list_type,
-                            'url': full_url
-                        })
+
+                        # # Формируем итоговый словарь
+                        # results.append({
+                        #     'university': link_data['name'],
+                        #     'form': form,
+                        #     'filial': filial,
+                        #     'direction': direction,
+                        #     'list_type': list_type,
+                        #     'url': full_url
+                        # })
+
+
+                       # 🌲 Строим дерево
+                        results.setdefault(university, {}) \
+                               .setdefault(form, {}) \
+                               .setdefault(filial, {}) \
+                               .setdefault(direction, {})[list_type] = full_url
     
     return results

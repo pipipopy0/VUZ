@@ -137,6 +137,18 @@ def parse_worker(queue_html_links, queue_BD_links):
 
 import warnings
 
+def _print_nested(data, indent=0):
+    """Рекурсивно печатает вложенный словарь"""
+    prefix = "   " * indent
+    if isinstance(data, dict):
+        for key, value in data.items():
+            print(f"{prefix}• {key}")
+            _print_nested(value, indent + 1)
+    else:
+        print(f"{prefix}→ {data}")
+
+
+
 def db_worker(queue_data):
     """ TODO Заглушка: просто показывает, что приходит от парсера"""
     warnings.warn("⚠️  Download_all_links.py [DB] ЗАГЛУШКА — данные не сохраняются!", UserWarning, stacklevel=2)
@@ -157,7 +169,7 @@ def db_worker(queue_data):
             # Передаём пачку данных в класс
             # ЗДЕСЬ ЗАПИСЫВАЕМ ИНФОРМАЦИЮ ИЗ data В БД
             
-            print(f"💾 Сохранено: {len(data)} записей")
+            _print_nested(data)  # ← Красивый вывод дерева
             
         except Exception as e:
             print(f"❌ Ошибка БД: {e}")
