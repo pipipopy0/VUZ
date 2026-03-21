@@ -1,19 +1,43 @@
-# 1. Подключаем инструмент для работы с JSON
 import json
 import requests
+import fake_useragent
 from requests.exceptions import RequestException, HTTPError, Timeout
 from bs4 import BeautifulSoup
 
 
+import sqlite3
+# Подключили БД
+
+conn = sqlite3.connect('Stepchik_learn_asynk/mpei_links.db') # Открыли или создали файл бд
+cursor = conn.cursor() # Указатель, которым тыкаем в базу данных
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS links (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        form TEXT NOT NULL,
+        filial TEXT NOT NULL,
+        direction TEXT NOT NULL,
+        list_type TEXT NOT NULL,
+        url TEXT NOT NULL UNIQUE
+    )
+''')
+conn.commit() # Отфиксировали создание новой таблицы
+
+sql_link_table_isert = """
+INSERT OR IGNORE INTO links (form, filial, direction, list_type, url)
+VALUES(?, ?, ?, ?, ?)
+"""
+# Теперь у нас есть удобный шаблон для обращения к нашей таблице
+
+user = fake_useragent.UserAgent().random
+header = {"user-agent" : user}
+
+
 
 def get_safe_html(url):
-    # 1. Заголовки: обязательны для обхода простых защит
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
-    }
     try:
         # 2. Запрос с таймаутом (чтобы не висеть вечно)
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=header, timeout=10)
 
         # 3. Проверка статуса (404, 500 и т.д. вызовут ошибку здесь)
         response.raise_for_status()
@@ -36,78 +60,83 @@ def get_safe_html(url):
     return None
 
 
+if __name__ == "__main__":
+    # === ПРОВЕРКА ===
+    target_url = "https://pk.mpei.ru/inform/entrants_list.html" # Твой пример
 
-# === ПРОВЕРКА ===
-target_url = "https://pk.mpei.ru/inform/entrants_list.html" # Твой пример
+    html_content = get_safe_html(target_url)
 
-html_content = get_safe_html(target_url)
+    if html_content:
+        # Превращаем набор строк в удобное дерево
+        soup = BeautifulSoup(html_content, 'lxml')
 
-if html_content:
-    # Превращаем набор строк в удобное дерево
-    soup = BeautifulSoup(html_content, 'lxml')
+        # Находим все заголовки форм обучения на странице (идут сверху вниз)
+        form_headers = soup.find_all('div', class_='title2')
 
-    # Находим все заголовки форм обучения на странице (идут сверху вниз)
-    form_headers = soup.find_all('div', class_='title2')
+        # Создаем список только с текстом заголовков
+        forms_list = [h.get_text(strip=True) for h in form_headers]
+        # Теперь у нас есть список всех форм обучения
 
-    # Создаем список только с текстом заголовков
-    forms_list = [h.get_text(strip=True) for h in form_headers]
-    # Теперь у нас есть список всех форм обучения
+        tables = soup.find_all('table', class_='form-grid') # Ищем таблицу с очным бакалавриатом, пока работаем только с ней
 
-    tables = soup.find_all('table', class_='form-grid') # Ищем таблицу с очным бакалавриатом, пока работаем только с ней
+        # Так как у нас нет заголовка отдельно от таблицы, то мы можем однозначно сопоставить заголовок с таблицей
 
-    # Так как у нас нет заголовка отдельно от таблицы, то мы можем однозначно сопоставить заголовок с таблицей
-
-    if(len(forms_list) != len(tables)): # Но дополнительная проверочка не помешает, чтобы потом по всему коду не искать
-        print("Проблема, размеры получившихся групп не совпадают!") 
-
-
-    data = {} # Пустой словарь, который заполниться и пойдет в json
-
-    for i in range(len(forms_list)): # Так как размеры массивов одинаковые, то неважно какой брать
-
-        form = forms_list[i] # С какой таблицей работаем(название + таблица)
-        table = tables[i]
-        data[form] = {} # Ну и сразу сказать что у нас будет такой элемент
-
-        rows = table.find_all('tr') # Разделяем большую таблицу на строки
+        if(len(forms_list) != len(tables)): # Но дополнительная проверочка не помешает, чтобы потом по всему коду не искать
+            print("Проблема, размеры получившихся групп не совпадают!") 
 
 
-        filial = "НИУ «МЭИ» г. Москва" # Сначала по умолчанию идет основной вуз который в москве
-        data[form][filial] = {}
+        data = {} # Пустой словарь, который заполниться и пойдет в json
 
-        for row in rows[1:]: # отдельно обрабатываем каждую строку Кроме первой - там подписи, нам не нужны
-            cells = row.find_all('td') # Находим ВСЕ ячейки внутри этой конкретной строки
+        for i in range(len(forms_list)): # Так как размеры массивов одинаковые, то неважно какой брать
 
-            if len(cells) == 1: # один столбец = название филиала
-                filial = cells[0].get_text() # Вытягиваем название конкретного филиала
-                data[form][filial] = {}
-                
+            form = forms_list[i] # С какой таблицей работаем(название + таблица)
+            table = tables[i]
+            data[form] = {} # Ну и сразу сказать что у нас будет такой элемент
 
-            elif len(cells) == 2: # два столбца = направление + ссылки
-                # Здесь в первой ячейке лежит направление, а во второй для какой именно группы + ссылки
+            rows = table.find_all('tr') # Разделяем большую таблицу на строки
 
-                naprav = cells[0].get_text() # Из первой ячейки вытаскиваем название направления
-                groups = cells[1].find_all('a') # Из второй ячейки вытаскиваем массив ссылок с названиями групп
 
-                data[form][filial][naprav] = {}
+            filial = "НИУ «МЭИ» г. Москва" # Сначала по умолчанию идет основной вуз который в москве
+            data[form][filial] = {}
 
-                one_naprav = {} # Массив для того, чтобы заполнять группы внутри направлений
-                for group in groups:
-                    group_name = group.get_text(strip=True) # получаем имя группы, будет ключем
-                    group_link = "https://pk.mpei.ru/inform/" + group.get('href') # Собираем ссылку на группу
+            for row in rows[1:]: # отдельно обрабатываем каждую строку Кроме первой - там подписи, нам не нужны
+                cells = row.find_all('td') # Находим ВСЕ ячейки внутри этой конкретной строки
 
-                    data[form][filial][naprav][group_name] = group_link
+                if len(cells) == 1: # один столбец = название филиала
+                    filial = cells[0].get_text() # Вытягиваем название конкретного филиала
+                    data[form][filial] = {}
                     
 
-            else:
-                print(cells) # Что-то странное, надо посмотреть что именно
+                elif len(cells) == 2: # два столбца = направление + ссылки
+                    # Здесь в первой ячейке лежит направление, а во второй для какой именно группы + ссылки
 
-    # Здесь формирование списка завершено и надо теперь аккуратненько переписать его в файл
+                    naprav = cells[0].get_text() # Из первой ячейки вытаскиваем название направления
+                    groups = cells[1].find_all('a') # Из второй ячейки вытаскиваем массив ссылок с названиями групп
 
-    # Открываем файл с кодировкой utf-8 (для русских букв)
-    with open("Stepchik_learn_asynk/links.json", "w", encoding="utf-8") as f:
-        # dump(что_пишем, куда_пишем, сохраняем_кириллицу, делаем_отступы)
-        json.dump(data, f, ensure_ascii=False, indent=4)
+                    data[form][filial][naprav] = {}
+
+                    one_naprav = {} # Массив для того, чтобы заполнять группы внутри направлений
+                    for group in groups:
+                        group_name = group.get_text(strip=True) # получаем имя группы, будет ключем
+                        group_link = "https://pk.mpei.ru/inform/" + group.get('href') # Собираем ссылку на группу
+
+                        data[form][filial][naprav][group_name] = group_link
+
+
+                        data_sql = (form, filial, naprav, group_name, group_link)
+                        # Сформировали кортеж данных для отправки в базу данных
+                        cursor.execute(sql_link_table_isert, data_sql)
+                        
+                else:
+                    print(cells) # Что-то странное, надо посмотреть что именно
+
+        conn.commit() # Записали данные в базу данных
+        conn.close() # Закрываем базу данных
+        # Здесь формирование списка завершено и надо теперь аккуратненько переписать его в файл
+        # Открываем файл с кодировкой utf-8 (для русских букв)
+        with open("Stepchik_learn_asynk/links.json", "w", encoding="utf-8") as f:
+            # dump(что_пишем, куда_пишем, сохраняем_кириллицу, делаем_отступы)
+            json.dump(data, f, ensure_ascii=False, indent=4)
 
 
 
