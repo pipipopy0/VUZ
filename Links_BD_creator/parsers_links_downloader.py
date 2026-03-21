@@ -5,9 +5,9 @@
 [
     {
         'university': 'НИУ МЭИ',        # Из link_data['name']
+        'form': 'Очная',                # Из HTML или link_data
         'filial': 'Москва',             # Из HTML (заголовок)
         'direction': '09.03.02 Информатика',  # Из HTML (таблица)
-        'form': 'Очная',                # Из HTML или link_data
         'list_type': 'Без ВИ',          # Из HTML (тип списка)
         'url': 'https://pk.mpei.ru/...' # Из HTML (полная ссылка)
     },
@@ -83,9 +83,9 @@ def parse_mpei_links(html: str, link_data: str) -> list:
                         # Формируем итоговый словарь
                         results.append({
                             'university': link_data['name'],
+                            'form': form,
                             'filial': filial,
                             'direction': direction,
-                            'form': form,
                             'list_type': list_type,
                             'url': full_url
                         })
