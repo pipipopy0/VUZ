@@ -1,9 +1,5 @@
 import logics as l
-import  asyncio
-
-
-# Не надо материться!
-
+import asyncio
 
 if __name__ == "__main__":
     id_input = input("Введи id: ")

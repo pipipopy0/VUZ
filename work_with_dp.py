@@ -12,16 +12,19 @@ tables = {
             """id INTEGER PRIMARY KEY AUTOINCREMENT, 
             university_id INTEGER,
             name_form TEXT,
+            UNIQUE (university_id, name_form),
             FOREIGN KEY (university_id) REFERENCES universities(id)""",
         "branches" : 
             """id INTEGER PRIMARY KEY AUTOINCREMENT,
             forms_id INTEGER,
             name_branch TEXT,
+            UNIQUE (forms_id, name_branch),
             FOREIGN KEY (forms_id) REFERENCES forms(id)""",
         "directions" : 
             """id INTEGER PRIMARY KEY AUTOINCREMENT,
             branch_id INTEGER,
             name_direction TEXT,
+            UNIQUE (branch_id, name_direction),
             FOREIGN KEY (branch_id) REFERENCES branches(id)""",
 
         "specializations" : 
@@ -29,6 +32,7 @@ tables = {
             direction_id INTEGER,
             name_specialization TEXT,
             link_specialization TEXT,
+            UNIQUE (direction_id, name_specialization, link_specialization),
             FOREIGN KEY (direction_id) REFERENCES directions(id)""",
 
         

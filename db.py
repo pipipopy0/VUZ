@@ -103,7 +103,37 @@ class Database():
         except Exception as e:
             print(f"Ошибка из insert_recursive {e}")
 
+    def get_all_data(self):
     
+        self.cursor.execute("""
+        SELECT  universities.name_university, 
+                forms.name_form, 
+                branches.name_branch, 
+                directions.name_direction, 
+                specializations.name_specialization, 
+                specializations.link_specialization
+        
+        FROM specializations
+                            
+        JOIN directions ON specializations.direction_id = directions.id
+        JOIN branches ON directions.branch_id = branches.id
+        JOIN forms ON branches.forms_id = forms.id
+        JOIN universities ON forms.university_id = universities.id                    
+        """)
+
+        rows = self.cursor.fetchall()
+        result = []
+
+        for u_name, f_name, b_name, d_name, n_s_name, l_n_name in rows:
+            result.append({
+                        "university": u_name,
+                        "form": f_name,
+                        "branch": b_name,
+                        "direction": d_name,
+                        "specialization": n_s_name,
+                        "link": l_n_name
+                    })
+        return result
     def close_dp(self):
         """Очищаем память для всего хорошего"""
         self.dp.commit()
