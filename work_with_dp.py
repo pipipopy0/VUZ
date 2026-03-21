@@ -48,7 +48,9 @@ tables = {
             specialization_id INTEGER,
             total_score INTEGER,
             position INTEGER,
+            priority INTEGER,
             is_agree INTEGER,
+            remark TEXT,
             FOREIGN KEY (user_id) REFERENCES users(id),
             FOREIGN KEY (specialization_id) REFERENCES specializations(id)
             """
