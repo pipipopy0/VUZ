@@ -1,0 +1,14 @@
+[
+    {
+        "name": "НИУ МЭИ",
+        "base_url": "https://pk.mpei.ru/inform/entrants_list.html",
+        "parser": "mpei",
+        "active": true
+    },
+    {
+        "name": "МГУ",
+        "base_url": "https://msu.ru/...",
+        "parser": "msu",
+        "active": false
+    }
+]
