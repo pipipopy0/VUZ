@@ -156,7 +156,6 @@ def db_worker(queue_data):
     # ЕСЛИ НАДО ТО ЗДЕСЬ МОЖНО СОЗДАТЬ КЛАСС ДЛЯ УПРАВЛЕНИЯ БД
     
 
-
     while True:
         data = queue_data.get()
         
