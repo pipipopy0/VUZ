@@ -11,30 +11,30 @@ import sqlite3
 
 
 
-ua = UserAgent() # Создаем случайного фейкового пользователя
-async def fetch_page(session, url, semaphore, link_data): # Асинхронная функция для получения списков МЭИ
+# ua = UserAgent() # Создаем случайного фейкового пользователя
+# async def fetch_page(session, url, semaphore, link_data): # Асинхронная функция для получения списков МЭИ
     
-    headers = {"User-Agent": ua.random} # Создаем заголовок, притворяемся пользователем
+#     headers = {"User-Agent": ua.random} # Создаем заголовок, притворяемся пользователем
 
-    try:
-        async with semaphore:  # ← Ждем своей очереди Чтобы не положить мой ноут
-            async with session.get(url, headers=headers, timeout=15) as response: # with гарантирует правильное закрытие соединения, async with то же самое, но для ассинхронных функций, функция возвращает только заголовки, но не код страницы
-                response.raise_for_status()  # ← 4xx/5xx ошибки
-                html = await response.text() # Запрашиваем код страницы
-                return (link_data, html) # Возвращаем полученный результат + здесь же формируем пакет для парсера
+#     try:
+#         async with semaphore:  # ← Ждем своей очереди Чтобы не положить мой ноут
+#             async with session.get(url, headers=headers, timeout=15) as response: # with гарантирует правильное закрытие соединения, async with то же самое, но для ассинхронных функций, функция возвращает только заголовки, но не код страницы
+#                 response.raise_for_status()  # ← 4xx/5xx ошибки
+#                 html = await response.text() # Запрашиваем код страницы
+#                 return (link_data, html) # Возвращаем полученный результат + здесь же формируем пакет для парсера
 
-    except asyncio.TimeoutError:
-        print(f"⏱ Таймаут: {url}")
-    except aiohttp.ClientResponseError as e:
-        print(f"❌ HTTP {e.status}: {url}")
-    except aiohttp.ClientConnectorError as e:
-        print(f"🔌 Ошибка соединения: {url}")
-    except aiohttp.ClientPayloadError as e:
-        print(f"📦 Ошибка данных: {url}")
-    except Exception as e:
-        print(f"⚠️ Неизвестная ошибка: {url} — {type(e).__name__}")
+#     except asyncio.TimeoutError:
+#         print(f"⏱ Таймаут: {url}")
+#     except aiohttp.ClientResponseError as e:
+#         print(f"❌ HTTP {e.status}: {url}")
+#     except aiohttp.ClientConnectorError as e:
+#         print(f"🔌 Ошибка соединения: {url}")
+#     except aiohttp.ClientPayloadError as e:
+#         print(f"📦 Ошибка данных: {url}")
+#     except Exception as e:
+#         print(f"⚠️ Неизвестная ошибка: {url} — {type(e).__name__}")
     
-    return (link_data, None)  # ← Возвращаем кортеж даже при ошибке
+#     return (link_data, None)  # ← Возвращаем кортеж даже при ошибке
 
 
 
