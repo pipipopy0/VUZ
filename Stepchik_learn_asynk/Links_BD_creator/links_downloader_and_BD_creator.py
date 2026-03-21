@@ -1,12 +1,52 @@
-import json
-import requests
-import fake_useragent
+import asyncio
+import aiohttp
+from fake_useragent import UserAgent
 from requests.exceptions import RequestException, HTTPError, Timeout
 from bs4 import BeautifulSoup
 
 
 import sqlite3
 # Подключили БД
+
+
+
+
+ua = UserAgent() # Создаем случайного фейкового пользователя
+async def fetch_page(session, url, semaphore, link_data): # Асинхронная функция для получения списков МЭИ
+    
+    headers = {"User-Agent": ua.random} # Создаем заголовок, притворяемся пользователем
+
+    try:
+        async with semaphore:  # ← Ждем своей очереди Чтобы не положить мой ноут
+            async with session.get(url, headers=headers, timeout=15) as response: # with гарантирует правильное закрытие соединения, async with то же самое, но для ассинхронных функций, функция возвращает только заголовки, но не код страницы
+                response.raise_for_status()  # ← 4xx/5xx ошибки
+                html = await response.text() # Запрашиваем код страницы
+                return (link_data, html) # Возвращаем полученный результат + здесь же формируем пакет для парсера
+
+    except asyncio.TimeoutError:
+        print(f"⏱ Таймаут: {url}")
+    except aiohttp.ClientResponseError as e:
+        print(f"❌ HTTP {e.status}: {url}")
+    except aiohttp.ClientConnectorError as e:
+        print(f"🔌 Ошибка соединения: {url}")
+    except aiohttp.ClientPayloadError as e:
+        print(f"📦 Ошибка данных: {url}")
+    except Exception as e:
+        print(f"⚠️ Неизвестная ошибка: {url} — {type(e).__name__}")
+    
+    return (link_data, None)  # ← Возвращаем кортеж даже при ошибке
+
+
+
+
+
+
+
+
+
+
+
+
 
 conn = sqlite3.connect('Stepchik_learn_asynk/mpei_links.db') # Открыли или создали файл бд
 cursor = conn.cursor() # Указатель, которым тыкаем в базу данных
@@ -29,7 +69,7 @@ VALUES(?, ?, ?, ?, ?)
 """
 # Теперь у нас есть удобный шаблон для обращения к нашей таблице
 
-user = fake_useragent.UserAgent().random
+user = UserAgent().random
 header = {"user-agent" : user}
 
 
