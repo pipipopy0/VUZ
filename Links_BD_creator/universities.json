@@ -9,6 +9,6 @@
         "name": "МГУ",
         "base_url": "https://msu.ru/...",
         "parser": "msu",
-        "active": true
+        "active": false
     }
 ]
