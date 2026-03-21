@@ -68,7 +68,7 @@ def parse_mpei_links(html: str, link_data: dict) -> dict:
             
             # Пока просто выводим структуру для отладки
             if len(cells) == 1:
-                filial = {cells[0].get_text(strip=True)}
+                filial = cells[0].get_text(strip=True)
                 print(f"    🏢 Филиал: {cells[0].get_text(strip=True)}")
             elif len(cells) == 2:
                 
