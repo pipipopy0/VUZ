@@ -4,36 +4,50 @@ class Database():
     """Класс будет выполнять всю работу с базами данных
     """
     def __init__(self, dp_path):
-        """Initialization of data fields"""
+        """Инициализация полей класса"""
         self.dp_path = dp_path
         self.dp = sqlite3.connect(self.dp_path)
         self.cursor = self.dp.cursor()
     def create_tables(self, tables: dict):
         """
-        Create tables by table_name and command.
-        For create indicate
+        Создаем таблицы по командам, которые передали в параметры функции
         """
         for table_name, command in tables.items():
             self.cursor.execute(f"""CREATE TABLE IF NOT EXISTS {table_name} ({command})""")
 
-    """Пока что я решил написать для каждой таблицы отдельную функцию, так как посчитал это проще для понимания
-    
-    """
-
-    def add_fixed_data(self, table_name: str, column_name: list, value_name: list):
-        column_name = ",".join(column_name)
-        questions = ",".join(["?"]*len(value_name))
+    def add_fixed_data(self, table_name: str, column_name_list: list, value_name: list):
+        column_name = ",".join(column_name_list)#Соединяет все колонки, чтобы их передать в sql запрос
+        questions = ",".join(["?"]*len(value_name))#Делает столько знаков вопроса, сколько мы передаем значений, чтобы передать в sql запрос
         self.cursor.execute(f"""INSERT OR IGNORE INTO {table_name} ({column_name}) VALUES ({questions})""", tuple(value_name))
+        """наш sql запрос, который делает вставку или не делает(в случае если уже есть)
+        в таблицу(table_name) в колонки(column_name) значения(value_name)
+        (value_name) имеет формат кортежа, так как sql принимает кортежи(в круглых скобочках)
+        Например (1,2,3,4,5) - кортеж
+        """
         self.dp.commit()#сохраняем изменения
-        return self.cursor.lastrowid #Возращает id вставленной строки
-        
+
+        where_if = " AND ".join([f"{col}=?" for col in column_name_list])
+        """Эта страшная строка делает простую вещь. С помощью метода join она формирует
+        условие для последующего sql запроса. Она перебирает все колонки, которые мы передали
+        в функцию и делает их в формате 'название колонки=?' и добавляет and между ними
+        И у нас получается что-то вроде 'название колонки1=? AND 'название колонки2=?' 
+        """
+        self.cursor.execute(f"""SELECT id FROM {table_name} WHERE {where_if}""", tuple(value_name))
+        return self.cursor.fetchone()[0]
+        """ Это нам нужно, для того чтобы мы возвращали id строки, которую только что изменили. 
+        Мы этот id потом передаем для связи других таблиц. Вот и все
+        """
+    
+    def close_dp(self):
+        """Очищаем память для всего хорошего"""
+        self.dp.close()
                 
 dp_path = 'databases/abiturient.db'
 
 tables = {
         "universities" :
             """id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name_university TEXT""",
+            name_university TEXT UNIQUE""",
         "forms" :
             """id INTEGER PRIMARY KEY AUTOINCREMENT, 
             university_id INTEGER,
