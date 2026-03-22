@@ -134,20 +134,6 @@ def parse_worker(queue_html_links, queue_BD_links):
 # Заполнение базы данных вузами, филиалами, направлениями, формами обучения и ссылками на списки#
 #################################################################################################
 
-import warnings
-
-def _print_nested(data, indent=0):
-    """Рекурсивно печатает вложенный словарь"""
-    prefix = "   " * indent
-    if isinstance(data, dict):
-        for key, value in data.items():
-            print(f"{prefix}• {key}")
-            _print_nested(value, indent + 1)
-    else:
-        print(f"{prefix}→ {data}")
-
-
-
 def db_worker(queue_data):
     """Сохранение данных в базу данных"""
     
