@@ -2,7 +2,7 @@
   "МФТИ": {
     "Очная": {
       "Основной кампус": {
-        "\nНаправление 03.03.01 Прикладные математика и физика\n — \nРадиотехника и компьютерные технологии\n": {
+        "Направление 03.03.01 Прикладные математика и физика — Радиотехника и компьютерные технологии": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUmFkaW90ZWtobmlrYSBpIGtvbXB5dXRlcm55ZSB0ZWtobm9sb2dpaV9CeXVkemhldF9OYSBvYnNoY2hpa2ggb3Nub3Zhbml5YWtoLmh0bWw=",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUmFkaW90ZWtobmlrYSBpIGtvbXB5dXRlcm55ZSB0ZWtobm9sb2dpaV9CeXVkemhldF9JbWV5dXNoY2hpZSBvc29ib2UgcHJhdm8uaHRtbA==",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUmFkaW90ZWtobmlrYSBpIGtvbXB5dXRlcm55ZSB0ZWtobm9sb2dpaV9CeXVkemhldF9PdGRlbG5heWEga3ZvdGEuaHRtbA==",
@@ -13,7 +13,7 @@
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUmFkaW90ZWtobmlrYSBpIGtvbXB5dXRlcm55ZSB0ZWtobm9sb2dpaSBJbnllIG9yZ2FuaXphdHNpaV9Uc2VsZXZvZS5odG1s",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUmFkaW90ZWtobmlrYSBpIGtvbXB5dXRlcm55ZSB0ZWtobm9sb2dpaV9Lb250cmFrdC5odG1s"
         },
-        "\nНаправление 09.03.01 Информатика и вычислительная техника\n — \nКомпьютерные технологии и вычислительная техника\n": {
+        "Направление 09.03.01 Информатика и вычислительная техника — Компьютерные технологии и вычислительная техника": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvS29tcHl1dGVybnllIHRla2hub2xvZ2lpIGkgdnljaGlzbGl0ZWxuYXlhIHRla2huaWthX0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvS29tcHl1dGVybnllIHRla2hub2xvZ2lpIGkgdnljaGlzbGl0ZWxuYXlhIHRla2huaWthX0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvS29tcHl1dGVybnllIHRla2hub2xvZ2lpIGkgdnljaGlzbGl0ZWxuYXlhIHRla2huaWthX0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",
@@ -21,14 +21,14 @@
           "Целевая квота АО «МЦСТ»": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvS29tcHl1dGVybnllIHRla2hub2xvZ2lpIGkgdnljaGlzbGl0ZWxuYXlhIHRla2huaWthIEFLVHNJT05FUk5PRSBPQlNoY2hFU1RWTyDCq01Uc1NUwrtfVHNlbGV2b2UuaHRtbA==",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvS29tcHl1dGVybnllIHRla2hub2xvZ2lpIGkgdnljaGlzbGl0ZWxuYXlhIHRla2huaWthX0tvbnRyYWt0Lmh0bWw="
         },
-        "\nНаправление 03.03.01 Прикладные математика и физика\n — \nОбщая и прикладная физика\n": {
+        "Направление 03.03.01 Прикладные математика и физика — Общая и прикладная физика": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvT2JzaGNoYXlhIGkgcHJpa2xhZG5heWEgZml6aWthX0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvT2JzaGNoYXlhIGkgcHJpa2xhZG5heWEgZml6aWthX0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvT2JzaGNoYXlhIGkgcHJpa2xhZG5heWEgZml6aWthX0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvT2JzaGNoYXlhIGkgcHJpa2xhZG5heWEgZml6aWthIElueWUgb3JnYW5pemF0c2lpX1RzZWxldm9lLmh0bWw=",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvT2JzaGNoYXlhIGkgcHJpa2xhZG5heWEgZml6aWthX0tvbnRyYWt0Lmh0bWw="
         },
-        "\nНаправление 03.03.01 Прикладные математика и физика\n — \nГеокосмические науки и технологии\n": {
+        "Направление 03.03.01 Прикладные математика и физика — Геокосмические науки и технологии": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvR2Vva29zbWljaGVza2llIG5hdWtpIGkgdGVraG5vbG9naWlfQnl1ZHpoZXRfTmEgb2JzaGNoaWtoIG9zbm92YW5peWFraC5odG1s",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvR2Vva29zbWljaGVza2llIG5hdWtpIGkgdGVraG5vbG9naWlfQnl1ZHpoZXRfSW1leXVzaGNoaWUgb3NvYm9lIHByYXZvLmh0bWw=",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvR2Vva29zbWljaGVza2llIG5hdWtpIGkgdGVraG5vbG9naWlfQnl1ZHpoZXRfT3RkZWxuYXlhIGt2b3RhLmh0bWw=",
@@ -43,14 +43,14 @@
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvR2Vva29zbWljaGVza2llIG5hdWtpIGkgdGVraG5vbG9naWkgSW55ZSBvcmdhbml6YXRzaWlfVHNlbGV2b2UuaHRtbA==",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvR2Vva29zbWljaGVza2llIG5hdWtpIGkgdGVraG5vbG9naWlfS29udHJha3QuaHRtbA=="
         },
-        "\nНаправление 16.03.01 Техническая физика\n — \nТехническая физика\n": {
+        "Направление 16.03.01 Техническая физика — Техническая физика": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvVGVraG5pY2hlc2theWEgZml6aWthX0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvVGVraG5pY2hlc2theWEgZml6aWthX0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvVGVraG5pY2hlc2theWEgZml6aWthX0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",
           "Целевая квота АО «М3 «Арсенал»": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvVGVraG5pY2hlc2theWEgZml6aWthIEFPIMKrTVogwqtBcnNlbmFswrtfVHNlbGV2b2UuaHRtbA==",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvVGVraG5pY2hlc2theWEgZml6aWthX0tvbnRyYWt0Lmh0bWw="
         },
-        "\nНаправление 03.03.01 Прикладные математика и физика\n — \nАвиационные технологии и автономные транспортные системы\n": {
+        "Направление 03.03.01 Прикладные математика и физика — Авиационные технологии и автономные транспортные системы": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQXZpYXRzaW9ubnllIHRla2hub2xvZ2lpIGkgYXZ0b25vbW55ZSB0cmFuc3BvcnRueWUgc2lzdGVteV9CeXVkemhldF9OYSBvYnNoY2hpa2ggb3Nub3Zhbml5YWtoLmh0bWw=",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQXZpYXRzaW9ubnllIHRla2hub2xvZ2lpIGkgYXZ0b25vbW55ZSB0cmFuc3BvcnRueWUgc2lzdGVteV9CeXVkemhldF9JbWV5dXNoY2hpZSBvc29ib2UgcHJhdm8uaHRtbA==",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQXZpYXRzaW9ubnllIHRla2hub2xvZ2lpIGkgYXZ0b25vbW55ZSB0cmFuc3BvcnRueWUgc2lzdGVteV9CeXVkemhldF9PdGRlbG5heWEga3ZvdGEuaHRtbA==",
@@ -63,7 +63,7 @@
           "Целевая квота АО «Концерн ВКО «Алмаз – Антей»": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQXZpYXRzaW9uLiB0ZWtobm9sb2dpaSBpIGF2dG9ub20uIHRyYW5zcG9ydG55ZSBzaXN0ZW15IEFrdHNpb25lcm5vZSBvYnNoY2hlc3R2byDCq0tvbnRzZXJuIHZvemR1c2huby1rb3NtaWNoZXNrb3kgb2Jvcm9ueSDCq0FsbWF6IC0gQW50ZXnCu19Uc2VsZXZvZS5odG1s",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQXZpYXRzaW9ubnllIHRla2hub2xvZ2lpIGkgYXZ0b25vbW55ZSB0cmFuc3BvcnRueWUgc2lzdGVteV9Lb250cmFrdC5odG1s"
         },
-        "\nНаправление 09.03.01 Информатика и вычислительная техника\n — \nПрограммная инженерия и компьютерные технологии\n": {
+        "Направление 09.03.01 Информатика и вычислительная техника — Программная инженерия и компьютерные технологии": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZ3JhbW1uYXlhIGluemhlbmVyaXlhIGkga29tcHl1dGVybnllIHRla2hub2xvZ2lpX0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZ3JhbW1uYXlhIGluemhlbmVyaXlhIGkga29tcHl1dGVybnllIHRla2hub2xvZ2lpX0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZ3JhbW1uYXlhIGluemhlbmVyaXlhIGkga29tcHl1dGVybnllIHRla2hub2xvZ2lpX0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",
@@ -76,7 +76,7 @@
           "Целевая квота АО «МНИИ «Агат»": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZ3JhbW1uYXlhIGluemhlbmVyaXlhIGkga29tcHl1dGVybnllIHRla2hub2xvZ2lpIEFrdHNpb25lcm5vZSBvYnNoY2hlc3R2byDCq01vc2tvdnNraXkgbmF1Y2huby1pc3NsZWRvdmF0ZWxza2l5IGluc3RpdHV0IMKrQWdhdMK7X1RzZWxldm9lLmh0bWw=",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZ3JhbW1uYXlhIGluemhlbmVyaXlhIGkga29tcHl1dGVybnllIHRla2hub2xvZ2lpX0tvbnRyYWt0Lmh0bWw="
         },
-        "\nНаправление 03.03.01 Прикладные математика и физика\n — \nФизика перспективных технологий\n": {
+        "Направление 03.03.01 Прикладные математика и физика — Физика перспективных технологий": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRml6aWthIHBlcnNwZWt0aXZueWtoIHRla2hub2xvZ2l5X0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRml6aWthIHBlcnNwZWt0aXZueWtoIHRla2hub2xvZ2l5X0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRml6aWthIHBlcnNwZWt0aXZueWtoIHRla2hub2xvZ2l5X0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",
@@ -85,7 +85,7 @@
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRml6aWthIHBlcnNwZWt0aXZueWtoIHRla2hub2xvZ2l5IElueWUgb3JnYW5pemF0c2lpX1RzZWxldm9lLmh0bWw=",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRml6aWthIHBlcnNwZWt0aXZueWtoIHRla2hub2xvZ2l5X0tvbnRyYWt0Lmh0bWw="
         },
-        "\nНаправление 11.03.04 Электроника и наноэлектроника\n — \nЭлектроника и наноэлектроника\n": {
+        "Направление 11.03.04 Электроника и наноэлектроника — Электроника и наноэлектроника": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRWxla3Ryb25pa2EgaSBuYW5vZWxla3Ryb25pa2FfQnl1ZHpoZXRfTmEgb2JzaGNoaWtoIG9zbm92YW5peWFraC5odG1s",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRWxla3Ryb25pa2EgaSBuYW5vZWxla3Ryb25pa2FfQnl1ZHpoZXRfSW1leXVzaGNoaWUgb3NvYm9lIHByYXZvLmh0bWw=",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRWxla3Ryb25pa2EgaSBuYW5vZWxla3Ryb25pa2FfQnl1ZHpoZXRfT3RkZWxuYXlhIGt2b3RhLmh0bWw=",
@@ -94,7 +94,7 @@
           "Целевая квота АО «НПП «Торий»": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRWxla3Ryb25pa2EgaSBuYW5vZWxla3Ryb25pa2EgQWt0c2lvbmVybm9lIG9ic2hjaGVzdHZvIMKrTmF1Y2huby1wcm9penZvZHN0dmVubm9lIHByZWRwcml5YXRpZSDCq1Rvcml5wrtfVHNlbGV2b2UuaHRtbA==",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRWxla3Ryb25pa2EgaSBuYW5vZWxla3Ryb25pa2FfS29udHJha3QuaHRtbA=="
         },
-        "\nНаправление 01.03.02 Прикладная математика и информатика\n — \nПрикладная математика и информатика\n": {
+        "Направление 01.03.02 Прикладная математика и информатика — Прикладная математика и информатика": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJpa2xhZG5heWEgbWF0ZW1hdGlrYSBpIGluZm9ybWF0aWthX0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJpa2xhZG5heWEgbWF0ZW1hdGlrYSBpIGluZm9ybWF0aWthX0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJpa2xhZG5heWEgbWF0ZW1hdGlrYSBpIGluZm9ybWF0aWthX0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",
@@ -109,26 +109,26 @@
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJpa2xhZG5heWEgbWF0ZW1hdGlrYSBpIGluZm9ybWF0aWthIElueWUgb3JnYW5pemF0c2lpX1RzZWxldm9lLmh0bWw=",
           "Контрак": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJpa2xhZG5heWEgbWF0ZW1hdGlrYSBpIGluZm9ybWF0aWthX0tvbnRyYWt0Lmh0bWw="
         },
-        "\nНаправление 01.03.02 Прикладная математика и информатика\n — \nПроектирование и разработка комплексных бизнес-приложений\n": {
+        "Направление 01.03.02 Прикладная математика и информатика — Проектирование и разработка комплексных бизнес-приложений": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZWt0aXJvdmFuaWUgaSByYXpyYWJvdGthIGtvbXBsZWtzbnlraCBiaXpuZXMtcHJpbG96aGVuaXlfQnl1ZHpoZXRfTmEgb2JzaGNoaWtoIG9zbm92YW5peWFraC5odG1s",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZWt0aXJvdmFuaWUgaSByYXpyYWJvdGthIGtvbXBsZWtzbnlraCBiaXpuZXMtcHJpbG96aGVuaXlfQnl1ZHpoZXRfSW1leXVzaGNoaWUgb3NvYm9lIHByYXZvLmh0bWw=",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZWt0aXJvdmFuaWUgaSByYXpyYWJvdGthIGtvbXBsZWtzbnlraCBiaXpuZXMtcHJpbG96aGVuaXlfQnl1ZHpoZXRfT3RkZWxuYXlhIGt2b3RhLmh0bWw=",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZWt0aXJvdmFuaWUgaSByYXpyYWJvdGthIGtvbXBsZWtzbnlraCBiaXpuZXMtcHJpbG96aGVuaXlfS29udHJha3QuaHRtbA=="
         },
-        "\nНаправление 01.03.02 Прикладная математика и информатика\n — \nComputer Science for foreign citizens (для иностранных граждан, только платные места)\n": {
+        "Направление 01.03.02 Прикладная математика и информатика — Computer Science for foreign citizens(для иностранных граждан, только платные места)": {
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQ29tcHV0ZXIgU2NpZW5jZSBmb3IgZm9yZWlnbiBjaXRpemVuc19Lb250cmFrdC5odG1s"
         },
-        "\nНаправление 01.03.02 Прикладная математика и информатика\n — \nComputer Science/Информатика (только платные места)\n": {
+        "Направление 01.03.02 Прикладная математика и информатика — Computer Science/Информатика(только платные места)": {
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQ29tcHV0ZXIgU2NpZW5jZSBJbmZvcm1hdGlrYV9Lb250cmFrdC5odG1s"
         },
-        "\nНаправление 09.03.01 Информатика и вычислительная техника\n — \nСистемное программирование и прикладная математика\n": {
+        "Направление 09.03.01 Информатика и вычислительная техника — Системное программирование и прикладная математика": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvU2lzdGVtbm9lIHByb2dyYW1taXJvdmFuaWUgaSBwcmlrbGFkbmF5YSBtYXRlbWF0aWthX0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvU2lzdGVtbm9lIHByb2dyYW1taXJvdmFuaWUgaSBwcmlrbGFkbmF5YSBtYXRlbWF0aWthX0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvU2lzdGVtbm9lIHByb2dyYW1taXJvdmFuaWUgaSBwcmlrbGFkbmF5YSBtYXRlbWF0aWthX0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvU2lzdGVtbm9lIHByb2dyYW1taXJvdmFuaWUgaSBwcmlrbGFkbmF5YSBtYXRlbWF0aWthIElueWUgb3JnYW5pemF0c2lpX1RzZWxldm9lLmh0bWw=",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvU2lzdGVtbm9lIHByb2dyYW1taXJvdmFuaWUgaSBwcmlrbGFkbmF5YSBtYXRlbWF0aWthX0tvbnRyYWt0Lmh0bWw="
         },
-        "\nНаправление 09.03.01 Информатика и вычислительная техника\n — \nЕстественные и компьютерные науки\n": {
+        "Направление 09.03.01 Информатика и вычислительная техника — Естественные и компьютерные науки": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRXN0ZXN0dmVubnllIGkga29tcHl1dGVybnllIG5hdWtpX0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRXN0ZXN0dmVubnllIGkga29tcHl1dGVybnllIG5hdWtpX0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRXN0ZXN0dmVubnllIGkga29tcHl1dGVybnllIG5hdWtpX0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",
@@ -136,60 +136,60 @@
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRXN0ZXN0dmVubnllIGkga29tcHl1dGVybnllIG5hdWtpIElueWUgb3JnYW5pemF0c2lpX1RzZWxldm9lLmh0bWw=",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRXN0ZXN0dmVubnllIGkga29tcHl1dGVybnllIG5hdWtpX0tvbnRyYWt0Lmh0bWw="
         },
-        "\nНаправление 09.03.01 Информатика и вычислительная техника\n — \nМатематическое моделирование и теория управления\n": {
+        "Направление 09.03.01 Информатика и вычислительная техника — Математическое моделирование и теория управления": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvTWF0ZW1hdGljaGVza29lIG1vZGVsaXJvdmFuaWUgaSB0ZW9yaXlhIHVwcmF2bGVuaXlhX0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvTWF0ZW1hdGljaGVza29lIG1vZGVsaXJvdmFuaWUgaSB0ZW9yaXlhIHVwcmF2bGVuaXlhX0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvTWF0ZW1hdGljaGVza29lIG1vZGVsaXJvdmFuaWUgaSB0ZW9yaXlhIHVwcmF2bGVuaXlhX0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",
           "Целевая квота ООО «Научно-исследовательский институт трубопроводного транспорта»": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvTWF0ZW1hdGljaGVza29lIG1vZGVsaXJvdmFuaWUgaSB0ZW9yaXlhIHVwcmF2bGVuaXlhIE9CU2hjaEVTVFZPIFMgT0dSQU5JQ2hFTk5PWSBPVFZFVFNUVkVOTk9TVFl1IMKrTkFVQ2hOTy1JU1NMRURPVkFURUxTS0lZIElOU1RJVFVUIFRSVUJPUFJPVk9ETk9HTyBUUkFOU1BPUlRfVHNlbGV2b2UuaHRtbA==",
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvTWF0ZW1hdGljaGVza29lIG1vZGVsaXJvdmFuaWUgaSB0ZW9yaXlhIHVwcmF2bGVuaXlhIElueWUgb3JnYW5pemF0c2lpX1RzZWxldm9lLmh0bWw="
         },
-        "\nНаправление 03.03.01 Прикладные математика и физика\n — \nБиофизика и биоинформатика\n": {
+        "Направление 03.03.01 Прикладные математика и физика — Биофизика и биоинформатика": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvZml6aWthIGkgYmlvaW5mb3JtYXRpa2FfQnl1ZHpoZXRfTmEgb2JzaGNoaWtoIG9zbm92YW5peWFraC5odG1s",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvZml6aWthIGkgYmlvaW5mb3JtYXRpa2FfQnl1ZHpoZXRfSW1leXVzaGNoaWUgb3NvYm9lIHByYXZvLmh0bWw=",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvZml6aWthIGkgYmlvaW5mb3JtYXRpa2FfQnl1ZHpoZXRfT3RkZWxuYXlhIGt2b3RhLmh0bWw=",
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvZml6aWthIGkgYmlvaW5mb3JtYXRpa2EgSW55ZSBvcmdhbml6YXRzaWlfVHNlbGV2b2UuaHRtbA==",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvZml6aWthIGkgYmlvaW5mb3JtYXRpa2FfS29udHJha3QuaHRtbA=="
         },
-        "\nНаправление 19.03.01 Биотехнология\n — \nБиотехнология\n": {
+        "Направление 19.03.01 Биотехнология — Биотехнология": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvdGVraG5vbG9naXlhX0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvdGVraG5vbG9naXlhX0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvdGVraG5vbG9naXlhX0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvdGVraG5vbG9naXlhIElueWUgb3JnYW5pemF0c2lpX1RzZWxldm9lLmh0bWw=",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvdGVraG5vbG9naXlhX0tvbnRyYWt0Lmh0bWw="
         },
-        "\nНаправление 19.03.01 Биотехнология\n — \nBiomedical engineering for foreigh citizens (для иностранных граждан, только платные места)\n": {
+        "Направление 19.03.01 Биотехнология — Biomedical engineering for foreigh citizens (для иностранных граждан, только платные места)": {
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvbWVkaWNhbCBlbmdpbmVlcmluZyBmb3IgZm9yZWlnaCBjaXRpemVuc19Lb250cmFrdC5odG1s"
         },
-        "\nНаправление 19.03.01 Биотехнология\n — \nBiomedical engineering (только платные места)\n": {
+        "Направление 19.03.01 Биотехнология — Biomedical engineering (только платные места)": {
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvQmlvbWVkaWNhbCBlbmdpbmVlcmluZ19Lb250cmFrdC5odG1s"
         },
-        "\nНаправление 03.03.01 Прикладные математика и физика\n — \nПриродоподобные, плазменные и ядерные технологии\n": {
+        "Направление 03.03.01 Прикладные математика и физика — Природоподобные, плазменные и ядерные технологии": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJpcm9kb3BvZG9ibnllIHBsYXptZW5ueWUgaSB5YWRlcm55ZSB0ZWtobm9sb2dpaV9CeXVkemhldF9OYSBvYnNoY2hpa2ggb3Nub3Zhbml5YWtoLmh0bWw=",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJpcm9kb3BvZG9ibnllIHBsYXptZW5ueWUgaSB5YWRlcm55ZSB0ZWtobm9sb2dpaV9CeXVkemhldF9JbWV5dXNoY2hpZSBvc29ib2UgcHJhdm8uaHRtbA==",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJpcm9kb3BvZG9ibnllIHBsYXptZW5ueWUgaSB5YWRlcm55ZSB0ZWtobm9sb2dpaV9CeXVkemhldF9PdGRlbG5heWEga3ZvdGEuaHRtbA==",
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJpcm9kb3BvZG9ibnllIHBsYXptZW5ueWUgaSB5YWRlcm55ZSB0ZWtobm9sb2dpaSBJbnllIG9yZ2FuaXphdHNpaV9Uc2VsZXZvZS5odG1s",
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJpcm9kb3BvZG9ibnllIHBsYXptZW5ueWUgaSB5YWRlcm55ZSB0ZWtobm9sb2dpaV9Lb250cmFrdC5odG1s"
         },
-        "\nНаправление 03.03.01 Прикладные математика и физика\n — \nУправление инновациями в бизнесе (только платные места)\n": {
+        "Направление 03.03.01 Прикладные математика и физика — Управление инновациями в бизнесе(только платные места)": {
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvVXByYXZsZW5pZSBpbm5vdmF0c2l5YW1pIHYgYml6bmVzZSAoUE1GKV9Lb250cmFrdC5odG1s"
         },
-        "\nНаправление 19.03.01 Биотехнология\n — \nУправление инновациями в бизнесе (только платные места)\n": {
+        "Направление 19.03.01 Биотехнология — Управление инновациями в бизнесе(только платные места)": {
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvVXByYXZsZW5pZSBpbm5vdmF0c2l5YW1pIHYgYml6bmVzZSAoQlQpX0tvbnRyYWt0Lmh0bWw="
         },
-        "\nНаправление 27.03.03 Системный анализ и управление\n — \nУправление инновациями в бизнесе (только платные места)\n": {
+        "Направление 27.03.03 Системный анализ и управление — Управление инновациями в бизнесе(только платные места)": {
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvVXByYXZsZW5pZSBpbm5vdmF0c2l5YW1pIHYgYml6bmVzZSAoU0FVKV9Lb250cmFrdC5odG1s"
         },
-        "\nНаправление 38.03.01 Экономика\n — \nУправление инновациями в бизнесе (только платные места)\n": {
+        "Направление 38.03.01 Экономика — Управление инновациями в бизнесе(только платные места)": {
           "Контракт": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvVXByYXZsZW5pZSBpbm5vdmF0c2l5YW1pIHYgYml6bmVzZSAoRWtvbm9taWthKV9Lb250cmFrdC5odG1s"
         },
-        "\nНаправление 01.03.01 Математика\n — \nФундаментальная математика\n": {
+        "Направление 01.03.01 Математика — Фундаментальная математика": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRnVuZGFtZW50YWxuYXlhIG1hdGVtYXRpa2FfQnl1ZHpoZXRfTmEgb2JzaGNoaWtoIG9zbm92YW5peWFraC5odG1s",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRnVuZGFtZW50YWxuYXlhIG1hdGVtYXRpa2FfQnl1ZHpoZXRfSW1leXVzaGNoaWUgb3NvYm9lIHByYXZvLmh0bWw=",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRnVuZGFtZW50YWxuYXlhIG1hdGVtYXRpa2FfQnl1ZHpoZXRfT3RkZWxuYXlhIGt2b3RhLmh0bWw=",
           "Целевая квота ФГУП «ЦНИИХМ»": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRnVuZGFtZW50YWxuYXlhIG1hdGVtYXRpa2EgRmVkZXJhbG5vZSBnb3N1ZGFyc3R2ZW5ub2UgdW5pdGFybm9lIHByZWRwcml5YXRpZSDCq1RzZW50cmFsbnl5IG5hdWNobm8taXNzbGVkb3ZhdGVsc2tpeSBpbnN0aXR1dCBraGltaWkgaSBtZWtoYW5pa2nCu19Uc2VsZXZvZS5odG1s",
           "Иные организации": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvRnVuZGFtZW50YWxuYXlhIG1hdGVtYXRpa2EgSW55ZSBvcmdhbml6YXRzaWlfVHNlbGV2b2UuaHRtbA=="
         },
-        "\nНаправление 09.03.04 Программная инженерия\n — \nПрограммная инженерия\n": {
+        "Направление 09.03.04 Программная инженерия — Программная инженерия": {
           "Бюджет": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZ3JhbW1uYXlhIGluemhlbmVyaXlhX0J5dWR6aGV0X05hIG9ic2hjaGlraCBvc25vdmFuaXlha2guaHRtbA==",
           "Особая квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZ3JhbW1uYXlhIGluemhlbmVyaXlhX0J5dWR6aGV0X0ltZXl1c2hjaGllIG9zb2JvZSBwcmF2by5odG1s",
           "Отдельная квота": "https://priem.mipt.ru/applications_v2/YmFjaGVsb3IvUHJvZ3JhbW1uYXlhIGluemhlbmVyaXlhX0J5dWR6aGV0X090ZGVsbmF5YSBrdm90YS5odG1s",

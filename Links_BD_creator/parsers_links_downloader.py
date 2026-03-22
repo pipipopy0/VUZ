@@ -186,11 +186,11 @@ def parse_mipt_links(html: str, link_data: dict) -> dict:
 
                 if "Программы" in cells[0].get_text(): # Это для нас бесполезная строка
                     continue
-                naprav = cells[0].get_text()
+                naprav = cells[0].get_text(strip=True)
 
             elif len(cells) == 4: # Где-то здесь живут списки
 
-                progr = cells[0].get_text() # В первой ячейке находиться программа
+                progr = cells[0].get_text(strip=True) # В первой ячейке находиться программа
                 
                 for cell in cells[1:]: # Проходимся по всем ячейкам
 
