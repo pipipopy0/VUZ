@@ -6,9 +6,9 @@
         "active": true
     },
     {
-        "name": "МГУ",
-        "base_url": "https://msu.ru/...",
-        "parser": "msu",
+        "name": "МФТИ",
+        "base_url": "https://pk.mipt.ru/bachelor/2025_list/",
+        "parser": "mipt",
         "active": true
     }
 ]
