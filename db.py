@@ -103,6 +103,9 @@ class Database():
         except Exception as e:
             print(f"Ошибка из insert_recursive {e}")
 
+    def add_update_data():
+        pass
+
     def get_all_data(self):
     
         self.cursor.execute("""
@@ -134,6 +137,7 @@ class Database():
                         "link": l_n_name
                     })
         return result
+    
     def close_dp(self):
         """Очищаем память для всего хорошего"""
         self.dp.commit()
